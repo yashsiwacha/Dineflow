@@ -1,0 +1,36 @@
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Build outputs
+target/
+build/
+dist/
+out/
+.next/
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# IDEs
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Env & Logs
+*.log
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Temporary files
+tmp/
+scratch/

@@ -1,0 +1,13 @@
+package com.dineflow.backend.infrastructure.persistence.repository;
+
+import com.dineflow.backend.infrastructure.persistence.entity.RestaurantTableEntity;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.Optional;
+import java.util.UUID;
+
+@Repository
+public interface SpringDataTableRepository extends JpaRepository<RestaurantTableEntity, UUID> {
+    Optional<RestaurantTableEntity> findByTableNumber(int tableNumber);
+}

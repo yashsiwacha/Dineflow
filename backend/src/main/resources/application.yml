@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: dineflow-backend
+
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:dineflow}
+    username: ${DB_USER:dineflow}
+    password: ${DB_PASSWORD:dineflow_secure_password}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      idle-timeout: 30000
+      pool-name: DineFlowHikariPool
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: validate # Database schema must be updated only via Flyway
+    show-sql: false
+    open-in-view: false # Prevent N+1 queries by closing session outside transaction
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          batch_size: 25
+
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, prometheus
+  endpoint:
+    health:
+      show-details: always
+
+# Custom security configuration properties
+dineflow:
+  security:
+    jwt:
+      secret: 407f3427218671b5660f81c9c54968bdd3427df13354bf407f3427218671b5660f81c9c54968bdd3427df13354bf
+      expiration-ms: 86400000 # 24 Hours
