@@ -3,11 +3,12 @@
 Thumbs.db
 
 # Build outputs
-target/
-build/
-dist/
-out/
-.next/
+/backend/target/
+/frontend/.next/
+/frontend/out/
+/frontend/.vercel/
+/build/
+/dist/
 
 # Dependencies
 node_modules/
