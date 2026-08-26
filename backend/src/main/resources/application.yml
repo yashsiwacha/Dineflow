@@ -18,9 +18,11 @@ spring:
 
   flyway:
     enabled: true
-    baseline-on-migrate: true
+    baseline-on-migrate: false
     locations: classpath:db/migration
     table: dineflow_schema_history
+    schemas: dineflow
+    create-schemas: true
 
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
@@ -31,6 +33,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
+        default_schema: dineflow
         jdbc:
           batch_size: 25
 
