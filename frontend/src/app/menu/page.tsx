@@ -101,7 +101,7 @@ function DishCard({ item, onAdd }: { item: MenuItem; onAdd: () => void }) {
               {item.name}
             </h3>
           </Link>
-          <p className="text-brand-charcoal/45 text-xs font-light leading-relaxed line-clamp-2 flex-1 mb-3">
+          <p className="text-brand-charcoal/70 text-xs font-normal leading-relaxed line-clamp-2 flex-1 mb-3">
             {item.description}
           </p>
 
@@ -111,7 +111,7 @@ function DishCard({ item, onAdd }: { item: MenuItem; onAdd: () => void }) {
               {[1,2,3].map(s => (
                 <Flame key={s} className={`w-3.5 h-3.5 ${s <= item.spiceLevel ? 'text-brand-terracotta fill-brand-terracotta' : 'text-brand-charcoal/10'}`} />
               ))}
-              <span className="text-[10px] text-brand-charcoal/30 ml-1 uppercase tracking-wide">
+              <span className="text-[10px] text-brand-charcoal/60 ml-1 uppercase tracking-wide font-medium">
                 {item.spiceLevel === 1 ? 'Mild' : item.spiceLevel === 2 ? 'Medium' : 'Spicy'}
               </span>
             </div>
@@ -119,7 +119,7 @@ function DishCard({ item, onAdd }: { item: MenuItem; onAdd: () => void }) {
 
           {/* Bottom */}
           <div className="pt-3 border-t border-brand-cream-dark flex items-center justify-between">
-            <span className="text-[10px] text-brand-charcoal/30 font-light truncate max-w-[60%]">
+            <span className="text-[10px] text-brand-charcoal/60 font-medium truncate max-w-[60%]">
               {item.allergens?.length > 0
                 ? `Contains: ${item.allergens.slice(0,2).join(', ')}${item.allergens.length > 2 ? '…' : ''}`
                 : 'Allergen free'}

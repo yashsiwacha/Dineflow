@@ -172,7 +172,7 @@ export default function DishDetails() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-white/50 text-sm font-light leading-relaxed"
+              className="text-white/80 text-sm font-normal leading-relaxed"
             >
               {dish.description}
             </motion.p>
@@ -186,7 +186,7 @@ export default function DishDetails() {
             >
               {dish.spiceLevel > 0 && (
                 <div className="flex items-center gap-3">
-                  <span className="text-[10px] text-white/40 uppercase tracking-wider font-semibold">Spice Level:</span>
+                  <span className="text-[10px] text-white/60 uppercase tracking-wider font-semibold">Spice Level:</span>
                   <div className="flex gap-0.5">
                     {[1, 2, 3].map(s => (
                       <Flame key={s} className={`w-4 h-4 ${s <= dish.spiceLevel ? 'text-brand-terracotta fill-brand-terracotta' : 'text-white/10'}`} />
@@ -196,8 +196,8 @@ export default function DishDetails() {
               )}
               
               <div className="flex items-start gap-3 text-xs">
-                <span className="text-[10px] text-white/40 uppercase tracking-wider font-semibold mt-0.5">Allergens:</span>
-                <span className="text-white/70 font-light">
+                <span className="text-[10px] text-white/60 uppercase tracking-wider font-semibold mt-0.5">Allergens:</span>
+                <span className="text-white/80 font-normal">
                   {dish.allergens && dish.allergens.length > 0 ? dish.allergens.join(', ') : 'Allergen free'}
                 </span>
               </div>
@@ -210,7 +210,7 @@ export default function DishDetails() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="space-y-2"
             >
-              <label className="block text-[10px] uppercase tracking-wider text-white/40 font-semibold">
+              <label className="block text-[10px] uppercase tracking-wider text-white/60 font-semibold">
                 Special Instructions
               </label>
               <textarea
